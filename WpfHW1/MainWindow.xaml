@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfHW1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -17,23 +17,145 @@
                       Width="3"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Stretch" />
-        
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="Resources/cafeBack2.jpg"
+                                Stretch="UniformToFill"
+                                Viewbox="0, 0, 0.7, 0.7"/>
+            </Border.Background>
+        </Border>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Border Background="Aqua" BorderBrush="Black" BorderThickness ="2"/>
-            <StackPanel>
-                <TextBlock>StakPanel</TextBlock>
+            <Border Background="#FFD1CABE"
+                    BorderBrush="Black"
+                    BorderThickness ="2.5"
+                    CornerRadius="0 0 20 20"/>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Resources/candy.png"
+                       Width="50"
+                       Height="50"
+                       Margin="20 10 0 10"/>
+                <Grid Margin="10 5 0 5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="my"
+                            FontFamily="Georgia italic ipact"
+                            VerticalAlignment="Bottom"
+                            FontSize="16"/>
+                        <TextBlock Text="Candy"
+                            FontFamily="Book Antiqua"
+                            VerticalAlignment="Bottom"
+                            FontSize="16"
+                            FontStyle="Oblique"/>
+                    </StackPanel>
+                    
+                    <TextBlock Grid.Row="1"
+                               Text="based in 2022"
+                               VerticalAlignment="Top"
+                               FontFamily="Georgia italic ipact"
+                               FontSize="6"/>
+                </Grid>
             </StackPanel>
-            <Border Background="BlueViolet" BorderBrush="Black" BorderThickness ="2" Grid.Row="1"/>
-            <Canvas Grid.Row="1">
-                <TextBlock>Canvas</TextBlock>
+            
+            <Canvas Grid.Row="1"
+                    Width="400"
+                    Height="250">
+                <Border 
+                        Canvas.Left="20"
+                        Canvas.Top="20"
+                        Background="#B2D1CABE"
+                        BorderBrush="Black"
+                        BorderThickness="3"
+                        Width="360"
+                        Height="210"
+                        CornerRadius="25">
+                    <Grid Margin="50 20 20 20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Мы"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       FontSize="25"
+                                       Margin="40 0 0 0"
+                                       TextDecorations="Underline"
+                                       FontWeight="Bold"
+                                       FontFamily="Comic Sans MS"/>
+                            <TextBlock Text=" делаем самые"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       FontSize="20"
+                                       FontFamily="Comic Sans MS"/>
+                        </StackPanel>
+                        <TextBlock Text="вкусные конфеты и"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="Comic Sans MS"
+                                   Grid.Row="1"
+                                   Margin="40 0 0 0"/>
+                        <TextBlock Text="выпечку. Приходите к"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="Comic Sans MS"
+                                   Grid.Row="2"
+                                   Margin="40 0 0 0"/>
+                        <TextBlock Text="нам утром на завтрак и"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="Comic Sans MS"
+                                   Grid.Row="3"
+                                   Margin="40 0 0 0"/>
+                        <TextBlock Text="попробуйте свежий"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="Comic Sans MS"
+                                   Grid.Row="4"
+                                   Margin="40 0 0 0"/>
+                        <TextBlock Text="кофе!"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="Comic Sans MS"
+                                   Grid.Row="5"
+                                   Margin="40 0 0 0"/>
+                    </Grid>
+                    
+                </Border>
+                <Image Source="Resources/purepng.com-christmas-candy.png"
+                       Width="70"
+                       Canvas.Top="10"
+                       Canvas.Left="10"/>
+                <Image Source="Resources/candy-list.png"
+                       Width="80"
+                       Canvas.Right="30"
+                       Canvas.Bottom="20"/>
             </Canvas>
-            <Border Background="Crimson" BorderBrush="Black" BorderThickness ="2" Grid.Row="2"/>
-            <TextBlock Grid.Row="2">Grid</TextBlock>
+            <Border Grid.Row="2"
+                    Width="350"
+                    Margin="10"
+                    CornerRadius="25"
+                    Background="#FFD1CABE"
+                    BorderBrush="Black"
+                    BorderThickness="2.5">
+                
+            </Border>
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
