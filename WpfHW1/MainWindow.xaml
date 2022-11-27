@@ -21,15 +21,15 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Border Background="Aqua"/>
+            <Border Background="Aqua" BorderBrush="Black" BorderThickness ="2"/>
             <StackPanel>
                 <TextBlock>StakPanel</TextBlock>
             </StackPanel>
-            <Border Background="BlueViolet" Grid.Row="1"/>
+            <Border Background="BlueViolet" BorderBrush="Black" BorderThickness ="2" Grid.Row="1"/>
             <Canvas Grid.Row="1">
                 <TextBlock>Canvas</TextBlock>
             </Canvas>
-            <Border Background="Crimson" Grid.Row="2"/>
+            <Border Background="Crimson" BorderBrush="Black" BorderThickness ="2" Grid.Row="2"/>
             <TextBlock Grid.Row="2">Grid</TextBlock>
         </Grid>
         <Grid Grid.Column="2">
@@ -43,9 +43,9 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
-                    <Border Background="Gold"/>
+                    <Border Background="Gold" BorderBrush="Black" BorderThickness ="2"/>
                     <TextBlock>Grid</TextBlock>
-                    <Border Background="DarkSlateBlue" Grid.Row="1"/>
+                    <Border Background="DarkSlateBlue" BorderBrush="Black" BorderThickness ="2" Grid.Row="1"/>
                     <WrapPanel Grid.Row="1">
                         <TextBlock>WrapPanel</TextBlock>
                     </WrapPanel>
@@ -57,9 +57,9 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
-                    <Border Background="Violet"/>
+                    <Border Background="Violet" BorderBrush="Black" BorderThickness ="2"/>
                     <TextBlock>Grid</TextBlock>
-                    <Border Background="Green" Grid.Row="1"/>
+                    <Border Background="Green" BorderBrush="Black" BorderThickness ="2" Grid.Row="1"/>
                     <StackPanel Grid.Row="1">
                         <TextBlock>StakPanel</TextBlock>
                     </StackPanel>
