@@ -139,13 +139,9 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
-                    <Border Background="#B2D1CABE" 
-                            BorderBrush="Black"
-                            BorderThickness ="2"/>
+                    <Border Background="#B2D1CABE"/>
                     <TextBlock>Grid</TextBlock>
                     <Border Background="#FF8B733D" 
-                            BorderBrush="Black"
-                            BorderThickness ="2"
                             Grid.Row="1"/>
                     <WrapPanel Grid.Row="1">
                         <TextBlock>WrapPanel</TextBlock>
@@ -158,13 +154,9 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
-                    <Border Background="#B2D1CABE" 
-                            BorderBrush="Black" 
-                            BorderThickness ="2"/>
+                    <Border Background="#B2D1CABE"/>
                     <TextBlock>Grid</TextBlock>
-                    <Border Background="#FF8B733D"
-                            BorderBrush="Black"
-                            BorderThickness ="2" 
+                    <Border Background="#FF8B733D"                            
                             Grid.Row="1"/>
                     <StackPanel Grid.Row="1">
                         <TextBlock>StakPanel</TextBlock>
