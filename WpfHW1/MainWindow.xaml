@@ -76,66 +76,24 @@
                         Width="360"
                         Height="210"
                         CornerRadius="25">
-                    <Grid Margin="50 20 20 20">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Мы"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       FontSize="25"
-                                       Margin="40 0 0 0"
-                                       TextDecorations="Underline"
-                                       FontWeight="Bold"
-                                       FontFamily="Comic Sans MS"/>
-                            <TextBlock Text=" делаем самые"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       FontSize="20"
-                                       FontFamily="Comic Sans MS"/>
-                        </StackPanel>
-                        <TextBlock Text="вкусные конфеты и"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Center"
-                                   FontSize="20"
-                                   FontFamily="Comic Sans MS"
-                                   Grid.Row="1"
-                                   Margin="40 0 0 0"/>
-                        <TextBlock Text="выпечку. Приходите к"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Center"
-                                   FontSize="20"
-                                   FontFamily="Comic Sans MS"
-                                   Grid.Row="2"
-                                   Margin="40 0 0 0"/>
-                        <TextBlock Text="нам утром на завтрак и"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Center"
-                                   FontSize="20"
-                                   FontFamily="Comic Sans MS"
-                                   Grid.Row="3"
-                                   Margin="40 0 0 0"/>
-                        <TextBlock Text="попробуйте свежий"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Center"
-                                   FontSize="20"
-                                   FontFamily="Comic Sans MS"
-                                   Grid.Row="4"
-                                   Margin="40 0 0 0"/>
-                        <TextBlock Text="кофе!"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Center"
-                                   FontSize="20"
-                                   FontFamily="Comic Sans MS"
-                                   Grid.Row="5"
-                                   Margin="40 0 0 0"/>
-                    </Grid>
+                    <TextBlock 
+                               FontFamily="Comic Sans MS"
+                               FontSize="20"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center">
+                        <Run TextDecorations="Underline"
+                               FontWeight="Bold">Мы</Run> делаем самые
+                        <LineBreak/>
+                        вкусные конфеты и
+                        <LineBreak/>
+                        выпечку. Приходите к
+                        <LineBreak/>
+                        нам утром на завтрак и
+                        <LineBreak/>
+                        попробуйте свежий
+                        <LineBreak/>
+                        кофе
+                    </TextBlock>
                     
                 </Border>
                 <Image Source="Resources/purepng.com-christmas-candy.png"
