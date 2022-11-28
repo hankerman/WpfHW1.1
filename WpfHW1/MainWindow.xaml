@@ -147,15 +147,28 @@
                        Canvas.Right="30"
                        Canvas.Bottom="20"/>
             </Canvas>
-            <Border Grid.Row="2"
+            <Button Background="Transparent"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"
+                    Grid.Row="2"
                     Width="350"
-                    Margin="10"
+                    Height="150">
+                <Border 
+                    Width="340"
+                    Height="130"
                     CornerRadius="25"
                     Background="#FFD1CABE"
                     BorderBrush="Black"
                     BorderThickness="2.5">
-                
-            </Border>
+                    <TextBlock Text="Вход"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="50"
+                               FontWeight="Bold"
+                               FontFamily="Comic Sans MS"/>
+                </Border>
+            </Button>
+            
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
