@@ -263,12 +263,73 @@
                         <RowDefinition Height="10*"/>
                     </Grid.RowDefinitions>
                     <Border Background="#B2D1CABE"/>
-                    <TextBlock HorizontalAlignment="Center"
-                               VerticalAlignment="Center">Акции</TextBlock>
+                    <TextBlock FontSize="25"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontFamily="Comic Sans MS">Акции</TextBlock>
                     <Border Background="#FF8B733D"                            
                             Grid.Row="1"/>
                     <StackPanel Grid.Row="1">
-                        <TextBlock>StakPanel</TextBlock>
+                        <Border Background="#B2D1CABE"
+                                CornerRadius="15"
+                                Margin="15">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Resources/apple-pie.jpg"
+                                       Margin="10"/>
+                                <TextBlock Grid.Column="1"
+                                           Margin="10"
+                                           FontSize="18" 
+                                           FontFamily="Times New Roman">
+                                    Акция успей купить две шарлотки по цене одной
+                                    <LineBreak/>
+                                    С 10 до 13 часов.
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Background="#B2D1CABE"
+                                CornerRadius="15"
+                                Margin="15">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Resources/apple-pie.jpg"
+                                       Margin="10"/>
+                                <TextBlock Grid.Column="1"
+                                           Margin="10"
+                                           FontSize="18" 
+                                           FontFamily="Times New Roman">
+                                    Акция успей купить две шарлотки по цене одной
+                                    <LineBreak/>
+                                    С 10 до 13 часов.
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Background="#B2D1CABE"
+                                CornerRadius="15"
+                                Margin="15">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Resources/apple-pie.jpg"
+                                       Margin="10"/>
+                                <TextBlock Grid.Column="1"
+                                           Margin="10"
+                                           FontSize="18" 
+                                           FontFamily="Times New Roman">
+                                    Акция успей купить две шарлотки по цене одной
+                                    <LineBreak/>
+                                    С 10 до 13 часов.
+                                </TextBlock>
+                            </Grid>
+                        </Border>
                     </StackPanel>
                 </Grid>
             </DockPanel>
