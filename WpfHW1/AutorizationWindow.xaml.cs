@@ -10,25 +10,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfHW1.ViewModel;
 
 namespace WpfHW1
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AutorizationWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AutorizationWindow : Window
     {
-        public MainWindow()
+        private AutorizationVM vm;
+        public AutorizationWindow()
         {
             InitializeComponent();
+            vm  = new AutorizationVM();
+            this.DataContext = vm;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window auth = new AutorizationWindow();
-            auth.ShowDialog();
+            vm.PasswordUser = pwdBox.Password;
+            if (vm.Auth())
+            {
+                MessageBox.Show(Global.User.Name);
+            }
+            
         }
     }
 }
