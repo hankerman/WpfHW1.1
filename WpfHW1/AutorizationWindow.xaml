@@ -46,6 +46,6 @@
         <TextBlock VerticalAlignment="Bottom"
                    HorizontalAlignment="Center"
                    Text="{Binding Path=UserName, StringFormat='Пользователь {0} найден!',
-            Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+            Mode=OneWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue='Авторизуйтесь'}"/>
     </Grid>
 </Window>

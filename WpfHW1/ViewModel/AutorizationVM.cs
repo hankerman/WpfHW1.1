@@ -25,6 +25,7 @@ namespace WpfHW1.ViewModel
             if(access != null && access.IsAutorization(PasswordUser))
             {
                 Global.User = access;
+                UserName = access.Name;
                 return true;
             }
             return false;

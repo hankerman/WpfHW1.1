@@ -31,11 +31,11 @@ namespace WpfHW1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             vm.PasswordUser = pwdBox.Password;
-            if (vm.Auth())
-            {
-                MessageBox.Show(Global.User.Name);
-            }
-            
+            //if (vm.Auth())
+            //{
+            //    MessageBox.Show(Global.User.Name);
+            //}
+            vm.Auth();
         }
     }
 }
