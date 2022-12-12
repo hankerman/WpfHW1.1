@@ -11,28 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfHW1.ViewModel;
 
 namespace WpfHW1
 {
     /// <summary>
-    /// Логика взаимодействия для AutorizationWindow.xaml
+    /// Логика взаимодействия для UserWindow.xaml
     /// </summary>
-    public partial class AutorizationWindow : Window
+    public partial class UserWindow : Window
     {
-        private AutorizationVM vm;
-        public AutorizationWindow()
+        public UserWindow()
         {
             InitializeComponent();
-            vm  = new AutorizationVM();
-            this.DataContext = vm;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-            vm.Auth(pwdBox.Password);
-
         }
     }
 }
