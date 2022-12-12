@@ -30,8 +30,12 @@ namespace WpfHW1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            vm.Auth(pwdBox.Password);
+
+            if (vm.Auth(pwdBox.Password))
+            {
+                (new UserWindow()).Show();
+                this.Owner.Close();                
+            }
 
         }
     }

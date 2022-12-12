@@ -28,6 +28,7 @@ namespace WpfHW1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window auth = new AutorizationWindow();
+            auth.Owner = this;
             auth.ShowDialog();
         }
     }
