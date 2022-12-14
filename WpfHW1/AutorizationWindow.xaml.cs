@@ -34,7 +34,8 @@ namespace WpfHW1
             if (vm.Auth(pwdBox.Password))
             {
                 (new UserWindow()).Show();
-                this.Owner.Close();                
+                this.Owner.Close();
+                this.Close();
             }
 
         }

@@ -6,19 +6,29 @@
         xmlns:local="clr-namespace:WpfHW1"
         mc:Ignorable="d"
         Title="UserWindow" Height="450" Width="800">
-    <Window.Resources>
+    <!--<Window.Resources>
         <x:Array Type="{x:Type UserControl}" x:Key="Pageslist">
             <local:MainPage/>
         </x:Array>
-    </Window.Resources>
+    </Window.Resources>-->
     <Grid>
-        <Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="1">
             <ContentPresenter Content="{Binding Path=[0], Source={StaticResource Pageslist}}"/>
-        </Grid>
+        </Grid>-->
+        <ContentPresenter Content="{Binding Path=CurrentPage, 
+            Mode=OneWay,
+            UpdateSourceTrigger=PropertyChanged}"
+            Margin="50 0 0 0"/>
+        <StackPanel Width="50"
+                    HorizontalAlignment="Left">
+            <Button>Меню</Button>
+            <Button Click="MainPageClic">Главная</Button>
+            <Button Click="OrdersPageClic">Заказы</Button>
+        </StackPanel>
     </Grid>
 </Window>

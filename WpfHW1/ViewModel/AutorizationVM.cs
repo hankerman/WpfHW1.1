@@ -57,7 +57,8 @@ namespace WpfHW1.ViewModel
             //context.Users.Where(delegate(User x) { return x.Login == CurrentUser.Login; }).FirstOrDefault();
             if(access != null && access.IsAutorization(password))
             {
-                Global.User = access;
+                //Global.User = access;
+                UserContext.CreateUserContext(access);
                 UserName = access.Name;
                 return true;
             }
