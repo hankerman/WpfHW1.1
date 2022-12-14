@@ -6,10 +6,48 @@
              xmlns:local="clr-namespace:WpfHW1"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--<UserControl.Resources>
+        <ControlTemplate TargetType="Button" x:Key="ButtonTemplate">
+            <Border Background="{TemplateBinding Background}"
+                    CornerRadius="50">
+                <ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>-->
     <Grid>
-        <TextBlock Text="OrdersPage"
-                       FontSize="80"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="1">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<Button Background="LightGreen" Content="Привет">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>-->
+        <!--<Button Background="LightGreen" Content="Привет"
+                Template="{StaticResource ButtonTemplate}"/>-->
     </Grid>
 </UserControl>
