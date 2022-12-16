@@ -52,7 +52,7 @@ namespace WpfHW1.ViewModel
         {
             if(LoginUser == null) return false;
             if(password == null) return false;
-            var context = new UsersDB();
+            var context = UsersDB.Context;
             var access = context.Users.Where(x=>x.Login == LoginUser).FirstOrDefault();
             //context.Users.Where(delegate(User x) { return x.Login == CurrentUser.Login; }).FirstOrDefault();
             if(access != null && access.IsAutorization(password))

@@ -22,20 +22,87 @@
             <RowDefinition/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1">
+        <Grid>
+            <DockPanel Margin="10">
+                <DockPanel Height="20"
+                           Width="300"
+                           HorizontalAlignment="Right">
+                    <Button Content="Поиск"
+                            DockPanel.Dock="Right"/>
+                    <TextBox/>
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+        <ListView Grid.Row="1"
+                  ItemsSource="{Binding Path=Orders}"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel/>
+                    <WrapPanel HorizontalAlignment="Center"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        
-                    </Grid>
+                    <Viewbox MaxWidth="200">
+                        <Border Background="White"
+                                CornerRadius="25"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                Width="170"
+                                Height="170">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock HorizontalAlignment="Center"
+                               FontWeight="Bold"
+                               TextAlignment="Center">
+                        <Run FontSize="20" Text="{Binding Path=Id, StringFormat='Заказ {0}'}"/>
+                        <LineBreak/>
+                        <Run FontSize="10" Text="{Binding Path=Date, StringFormat=d, ConverterCulture='ru-RU'}"/>
+                                </TextBlock>
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock Text="{Binding Path=Client, StringFormat='Клиент: {0}'}"
+                                               TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding Path=Products.Count, StringFormat='Колличество товара: {0}'}"/>
+                                    <TextBlock Text="{Binding Path=Price, StringFormat='Итого: {0} золотых'}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView >
+        <!--<Viewbox Grid.RowSpan="2">
+            <Border Background="White"
+                CornerRadius="25"
+                BorderBrush="Black"
+                BorderThickness="1">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center"
+                               FontWeight="Bold"
+                               TextAlignment="Center">
+                        <Run FontSize="20">Заказ 1</Run>
+                        <LineBreak/>
+                        <Run FontSize="10">16.12.2022</Run>
+                    </TextBlock>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="Клиент: Иванов Иван"/>
+                        <TextBlock Text="Колличество товаров :0"/>
+                        <TextBlock Text="Итого :0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Viewbox>-->
+        
+        
+        
         <!--<Button Background="LightGreen" Content="Привет">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
