@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WpfHW1.Model
 {
-    internal class Order
+    public class Order
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }

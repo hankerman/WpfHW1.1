@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfHW1.Model;
 using WpfHW1.ViewModel;
 
 namespace WpfHW1.Pages
@@ -21,12 +22,28 @@ namespace WpfHW1.Pages
     /// </summary>
     public partial class OrdersPage : UserControl
     {
-        private OrdersVM _vM;
+        private OrdersVM _vm;
         public OrdersPage()
         {
             InitializeComponent();
-            _vM = new OrdersVM();
-            this.DataContext = _vM;
+            _vm = new OrdersVM();
+            this.DataContext = _vm;
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            _vm.UpdateListOrders();
+        }
+
+        private void DeliteOrders_Click(object sender, RoutedEventArgs e)
+        {
+            _vm.SelectedOrders = OrdersLV.SelectedItems.Cast<Order>().ToList();
+            _vm.DeleteOrders();
+        }
+
+        private void ModifyOrder_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

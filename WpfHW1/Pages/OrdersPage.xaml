@@ -23,20 +23,39 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <Grid>
-            <DockPanel Margin="10">
+            <Grid VerticalAlignment="Center"
+                  Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
                 <DockPanel Height="20"
                            Width="300"
                            HorizontalAlignment="Right">
                     <Button Content="Поиск"
-                            DockPanel.Dock="Right"/>
-                    <TextBox/>
+                            DockPanel.Dock="Right"
+                            Click="Search_Click"/>
+                    <TextBox Text="{Binding SearchText}"/>
                 </DockPanel>
-            </DockPanel>
+                <UniformGrid Width="300"
+                             HorizontalAlignment="Left"
+                             Columns="3">
+                    <Button Content="Добавить"/>
+                    <Button Content="Удалить"
+                            Click="DeliteOrders_Click"/>
+                    <Button Content="Изменить"
+                            Click="ModifyOrder_Click"/>
+                    
+
+                </UniformGrid>
+                
+            </Grid>
+            
         </Grid>
         <ListView Grid.Row="1"
                   ItemsSource="{Binding Path=Orders}"
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  x:Name="OrdersLV">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel HorizontalAlignment="Center"/>
@@ -75,6 +94,12 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView >
+        <StatusBar Grid.Row="2">
+            <TextBlock Text="{Binding ElementName=OrdersLV, Path=SelectedItems.Count,
+                StringFormat='Колличество выделеных заказов: {0}',UpdateSourceTrigger=PropertyChanged}"/>
+        </StatusBar>
+        
+        
         <!--<Viewbox Grid.RowSpan="2">
             <Border Background="White"
                 CornerRadius="25"

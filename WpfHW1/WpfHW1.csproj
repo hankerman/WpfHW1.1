@@ -58,6 +58,9 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderProduct.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Pages\OrderCRUD.xaml.cs">
+      <DependentUpon>OrderCRUD.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Set\Global.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -72,6 +75,7 @@
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AutorizationVM.cs" />
+    <Compile Include="ViewModel\OrderCRUD_VM.cs" />
     <Compile Include="ViewModel\OrdersVM.cs" />
     <Page Include="AutorizationWindow.xaml">
       <SubType>Designer</SubType>
@@ -96,6 +100,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\OrderCRUD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\OrdersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

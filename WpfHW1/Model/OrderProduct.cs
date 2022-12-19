@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfHW1.Model
 {
-    internal class OrderProduct
+    public class OrderProduct
     {
         public Product Product { get; set; }
         public int Quantity { get; set; }
