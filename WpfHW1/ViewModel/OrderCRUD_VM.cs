@@ -12,13 +12,14 @@ namespace WpfHW1.ViewModel
     {
         public OrderCRUD_VM(Order order = null)
         {
-            if(order == null)
+            _currentOrder = new Order();
+            if (order != null)
             {
-                _currentOrder = new Order();
-            }
-            else
-            {
-                _currentOrder = order;
+                _currentOrder.Products = order.Products;
+                _currentOrder.Client = order.Client;
+                _currentOrder.Date = order.Date;
+                _currentOrder.Id = order.Id;
+                
             }
             
         }
