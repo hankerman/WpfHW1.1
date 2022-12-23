@@ -20,23 +20,23 @@ namespace WpfHW1
     /// </summary>
     public partial class UserWindow : Window
     {
-        private PageContext _pageContext;
+        //private PageContext _pageContext;
         public UserWindow()
         {
             InitializeComponent();
-            _pageContext = new PageContext();
-            this.DataContext = _pageContext;
-            _pageContext.AddPage(new MainPage());
+            //_pageContext = new PageContext();
+            this.DataContext = PageContext.CurrentPageContext;
+            PageContext.CurrentPageContext.AddPage(new MainPage());
         }
 
         private void MainPageClic(object sender, RoutedEventArgs e)
         {
-            _pageContext.ChangeRootPage(new MainPage());
+            PageContext.CurrentPageContext.ChangeRootPage(new MainPage());
         }
 
         private void OrdersPageClic(object sender, RoutedEventArgs e)
         {
-            _pageContext.ChangeRootPage(new OrdersPage());
+            PageContext.CurrentPageContext.ChangeRootPage(new OrdersPage());
         }
     }
 }

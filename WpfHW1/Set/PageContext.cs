@@ -9,6 +9,18 @@ namespace WpfHW1
 {
     internal class PageContext : NotifyClass
     {
+        private static PageContext _currentPageContext = new PageContext();
+        public static PageContext CurrentPageContext
+        {
+            get { return _currentPageContext; }
+            set
+            {
+                if(_currentPageContext == null)
+                {
+                    _currentPageContext = value;
+                }
+            }
+        }
         private Stack<UserControl> _pages = new Stack<UserControl>();
         public UserControl CurrentPage { get; private set; }
         public void AddPage(UserControl page)

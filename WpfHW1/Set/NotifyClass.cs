@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace WpfHW1
 {
-    internal class NotifyClass : INotifyPropertyChanged
+    public class NotifyClass : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string property = null)
+        public virtual void OnPropertyChanged([CallerMemberName] string property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }

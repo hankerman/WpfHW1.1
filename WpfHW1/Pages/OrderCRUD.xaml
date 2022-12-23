@@ -21,7 +21,7 @@
                     </Grid.ColumnDefinitions>
                     <Label Content="ID заказа"/>
                     <TextBlock Grid.Column="1"
-                               Text="1"
+                               Text="{Binding Path=Id}"
                                VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
@@ -30,7 +30,8 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Дата заказа"/>
-                    <DatePicker Grid.Column="1"/>
+                    <DatePicker Grid.Column="1"
+                                SelectedDate="{Binding Path=Date}"/>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -38,7 +39,8 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Клиент"/>
-                    <TextBox Grid.Column="1"/>
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Path=Client}"/>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -47,7 +49,7 @@
                     </Grid.ColumnDefinitions>
                     <Label Content="Колличество продукции"/>
                     <TextBlock Grid.Column="1"
-                               Text="5"
+                               Text="{Binding Path=Products.Count}"
                                VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
@@ -57,7 +59,7 @@
                     </Grid.ColumnDefinitions>
                     <Label Content="Итого"/>
                     <TextBlock Grid.Column="1"
-                               Text="100"
+                               Text="{Binding Path=Price}"
                                VerticalAlignment="Center"/>
                 </Grid>
             </StackPanel>
@@ -67,16 +69,38 @@
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <DataGrid AutoGenerateColumns="False">
+            <DataGrid AutoGenerateColumns="False"
+                      ItemsSource="{Binding Path=Products}"
+                      CanUserAddRows="False"
+                      SelectedItem="{Binding Path=SelectProduct}"
+                      RowEditEnding="DataGrid_RowEditEnding">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="№"/>
+                    <DataGridTextColumn Header="№"
+                                        IsReadOnly="True"/>
                     <DataGridTextColumn Header="Наименование"
-                                        Width="Auto"/>
-                    <DataGridTextColumn Header="Колличество"/>
-                    <DataGridTextColumn Header="Цена"/>
-                    <DataGridTextColumn Header="Сумма"/>
+                                        Width="Auto"
+                                        Binding="{Binding Path=Product.Name}"
+                                        IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Колличество"
+                                        Binding="{Binding Path=Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Цена"
+                                        Binding="{Binding Path=Product.Price}"
+                                        IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Сумма"
+                                        Binding="{Binding Path=Price}"
+                                        IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <Grid Grid.Row="1">
+                <UniformGrid Width="150"
+                             Columns="2">
+                    <Button Content="Добавить"
+                            Margin="0 0 5 0"/>
+                    <Button Content="Удалить" 
+                            Margin="5 0 0 0"
+                            Click="DeliteProduct_Clic"/>
+                </UniformGrid>
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>

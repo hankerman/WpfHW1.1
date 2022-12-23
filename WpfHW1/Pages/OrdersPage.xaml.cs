@@ -43,6 +43,14 @@ namespace WpfHW1.Pages
 
         private void ModifyOrder_Click(object sender, RoutedEventArgs e)
         {
+            _vm.SelectedOrders = OrdersLV.SelectedItems.Cast<Order>().ToList();
+            Order order = _vm.SelectedOrders.FirstOrDefault();
+            if(order != null)
+            {
+                var page = new OrderCRUD(order);
+                PageContext.CurrentPageContext.AddPage(page);
+            }
+            
 
         }
     }
