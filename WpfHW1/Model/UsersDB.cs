@@ -57,7 +57,9 @@ namespace WpfHW1.Model
             };
             Folders = new List<Folder>()
             {
-                new Folder() { Name = "Конфеты", Nodes = new List<INode>()
+                new Folder() 
+                { 
+                    Name = "Конфеты", Nodes = new List<INode>()
                     {
                         new Folder() { Name = "Подпапка", Nodes = new List<INode>() 
                                     { 
