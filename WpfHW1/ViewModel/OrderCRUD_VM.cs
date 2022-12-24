@@ -94,7 +94,8 @@ namespace WpfHW1.ViewModel
         }
         public void AddProduct(Product product)
         {
-
+            Products.Add(new OrderProduct() { Product = product, Quantity = 1 });
+            OnPropertyChanged(nameof(Price));
         }
         public void DeleteProduct()
         {
