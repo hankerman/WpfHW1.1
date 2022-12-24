@@ -94,6 +94,12 @@ namespace WpfHW1.ViewModel
         }
         public void AddProduct(Product product)
         {
+            var s = Products.FirstOrDefault(x=>x.Product.ID== product.ID);
+            if(s!=null)
+            {
+                s.Quantity++;
+                return;
+            }
             Products.Add(new OrderProduct() { Product = product, Quantity = 1 });
             OnPropertyChanged(nameof(Price));
         }
