@@ -3,9 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfHW1"
+        xmlns:local="clr-namespace:WpfHW1.Model"
         mc:Ignorable="d"
         Title="SelectProductWindow" Height="450" Width="800">
+    <Window.Resources>
+        <HierarchicalDataTemplate DataType="{x:Type local:Folder}"
+                                  ItemsSource="{Binding Nodes}">
+            <DockPanel>
+                <Image Source="Resources\folder.png"
+                       Width="48"
+                       DockPanel.Dock="Left"/>
+                <TextBlock Text="{Binding Path=Name}"
+                           VerticalAlignment="Center"/>
+            </DockPanel>
+        </HierarchicalDataTemplate>
+        <DataTemplate DataType="{x:Type local:ProductNode}">
+            <DockPanel>
+                <Image Source="Resources\candy-list.png"
+                       Width="48"
+                       DockPanel.Dock="Left"/>
+                <TextBlock Text="{Binding Path=Name}"
+                           VerticalAlignment="Center"/>
+            </DockPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -17,6 +38,20 @@
             <TreeView x:Name="ProductsTree">
                 
             </TreeView>
+        </Grid>
+        
+        <Grid Grid.Row="2" Margin="15">
+            <Grid Width="300">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                        Click="Select_Click">Выбрать</Button>
+                <Button Grid.Column="2">Отмена</Button>
+            </Grid>
+            
         </Grid>
     </Grid>
 </Window>

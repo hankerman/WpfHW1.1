@@ -23,10 +23,23 @@ namespace WpfHW1
         public SelectProductWindow()
         {
             InitializeComponent();
-
+            _nodes = new List<INode>(UsersDB.Context.Folders);
+            ProductsTree.ItemsSource = _nodes;
         }
 
         private List<INode> _nodes;
+        private Product _selectProduct;
+        public Product SelectProduct { get => _selectProduct; }
 
+        private void Select_Click(object sender, RoutedEventArgs e)
+        {
+            ProductNode product = ProductsTree.SelectedItem as ProductNode;
+            if(product != null)
+            {
+                _selectProduct = product.Product;
+            }
+             
+            this.Close();
+        }
     }
 }

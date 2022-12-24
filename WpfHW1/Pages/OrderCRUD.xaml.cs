@@ -30,7 +30,7 @@ namespace WpfHW1.Pages
             this.DataContext = _vm;
         }
 
-        private void DeliteProduct_Clic(object sender, RoutedEventArgs e)
+        private void DeliteProduct_Click(object sender, RoutedEventArgs e)
         {
             _vm.DeleteProduct();
         }
@@ -38,6 +38,16 @@ namespace WpfHW1.Pages
         private void DataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
             _vm.OnPropertyChanged(nameof(_vm.Price));
+        }
+
+        private void AddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            var sw = new SelectProductWindow();
+            sw.ShowDialog();
+            if(sw.SelectProduct != null)
+            {
+                _vm.AddProduct(sw.SelectProduct);
+            }
         }
     }
 }

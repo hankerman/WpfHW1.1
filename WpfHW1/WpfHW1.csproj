@@ -152,7 +152,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\folder.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\apple-pie.jpg" />
     <Resource Include="Resources\cafeBack2.jpg" />

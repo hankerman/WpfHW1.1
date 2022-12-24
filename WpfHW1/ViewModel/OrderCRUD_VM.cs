@@ -92,7 +92,7 @@ namespace WpfHW1.ViewModel
                 OnPropertyChanged();
             }
         }
-        public void AddProduct()
+        public void AddProduct(Product product)
         {
 
         }
