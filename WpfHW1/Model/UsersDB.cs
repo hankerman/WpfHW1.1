@@ -58,13 +58,24 @@ namespace WpfHW1.Model
             Folders = new List<Folder>()
             {
                 new Folder() { Name = "Конфеты", Nodes = new List<INode>()
-                {
-                    new Folder() { Name = "Подпапка", Nodes = new List<INode>() { new ProductNode(Products.First(x => x.ID == 1)) } },
-                    new ProductNode(Products.First(x => x.ID == 2))
-                }
+                    {
+                        new Folder() { Name = "Подпапка", Nodes = new List<INode>() 
+                                    { 
+                                    new ProductNode(Products.First(x => x.ID == 1)) 
+                                    } 
+                        },
+                        new ProductNode(Products.First(x => x.ID == 2))
+                    }
                 },
-                new Folder(){Name = "Торты", Nodes= new List<INode>(){new ProductNode(Products.First(x=>x.ID==3)) } },
-                new Folder(){Name = "Прочее", Nodes= new List<INode>(Products.ToList().GetRange(3,3).Select(x=>new ProductNode(x)))},
+                new Folder()
+                {
+                    Name = "Торты", Nodes= new List<INode>(){new ProductNode(Products.First(x=>x.ID==3)) 
+                    } 
+                },
+                new Folder()
+                {
+                    Name = "Прочее", Nodes= new List<INode>(Products.ToList().GetRange(3,3).Select(x=>new ProductNode(x)))
+                },
             };
         }
         
