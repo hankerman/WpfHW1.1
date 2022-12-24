@@ -55,11 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\QuantityConverter.cs" />
+    <Compile Include="Model\Folder.cs" />
+    <Compile Include="Model\INode.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderProduct.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductNode.cs" />
     <Compile Include="Pages\OrderCRUD.xaml.cs">
       <DependentUpon>OrderCRUD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectProductWindow.xaml.cs">
+      <DependentUpon>SelectProductWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Set\Global.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
@@ -105,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\OrdersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

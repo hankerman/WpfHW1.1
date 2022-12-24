@@ -15,7 +15,7 @@ namespace WpfHW1.ViewModel
             _currentOrder = new Order();
             if (order != null)
             {
-                _currentOrder.Products = order.Products;
+                _currentOrder.Products = new ObservableCollection<OrderProduct>(order.Products);
                 _currentOrder.Client = order.Client;
                 _currentOrder.Date = order.Date;
                 _currentOrder.Id = order.Id;

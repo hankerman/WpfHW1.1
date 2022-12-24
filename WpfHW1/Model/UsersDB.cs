@@ -12,7 +12,7 @@ namespace WpfHW1.Model
     {
         private static UsersDB _context;
         public static UsersDB Context => _context ?? (_context = new UsersDB());
-        
+
         private UsersDB()
         {
             Orders = new ObservableCollection<Order>()
@@ -55,7 +55,19 @@ namespace WpfHW1.Model
                 } },
 
             };
+            Folders = new List<Folder>()
+            {
+                new Folder() { Name = "Конфеты", Nodes = new List<INode>()
+                {
+                    new Folder() { Name = "Подпапка", Nodes = new List<INode>() { new ProductNode(Products.First(x => x.ID == 1)) } },
+                    new ProductNode(Products.First(x => x.ID == 2))
+                }
+                },
+                new Folder(){Name = "Торты", Nodes= new List<INode>(){new ProductNode(Products.First(x=>x.ID==3)) } },
+                new Folder(){Name = "Прочее", Nodes= new List<INode>(Products.ToList().GetRange(3,3).Select(x=>new ProductNode(x)))},
+            };
         }
+        
         public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>()
         {
             new User("Admin", "Admin", "Admin"),
@@ -63,6 +75,7 @@ namespace WpfHW1.Model
             new User("Максим", "Max", "123"),
             new User("Иван", "IvanoBoss", "0000"),
             new User("Балбес", "Babl", "12321"),
+            new User("Admin","a",""),
         };
         public ObservableCollection<Product> Products { get; set; } = new ObservableCollection<Product>()
         {
@@ -73,6 +86,7 @@ namespace WpfHW1.Model
             new Product(){ID = 5, Name = "Торт \"Чародейка\"", Price = 350M},
             new Product(){ID = 6, Name = "Глинтвейн", Price = 150M},
         };
+        public List<Folder> Folders { get; set; }
         public ObservableCollection<Order> Orders { get; set; } 
     }
 }
